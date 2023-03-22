@@ -6,3 +6,6 @@ node_modules
 .env.*
 *.db
 *.db-journal
+/test-results/
+/playwright-report/
+/playwright/.cache/

@@ -25,12 +25,12 @@
   <p class="text-red-900 border-red-900 bg-red-300 border-2 p-2 my-4">{error}</p>
 {/if}
 
-<form on:submit action="/echo-chamber/api/sign-up" method="post" data-test="sign-up-form">
+<form on:submit action="/echo-chamber/api/sign-up" method="post" data-testid="sign-up-form">
   <label for="email">Email Address</label><input
     type="email"
     name="email"
     id="email"
-    data-test="sign-up-email"
+    data-testid="sign-up-email"
     required
   />
   <label for="password">Password</label><input
@@ -38,10 +38,10 @@
     name="password"
     id="password"
     minlength="4"
-    data-test="sign-up-password"
+    data-testid="sign-up-password"
     required
   />
-  <button type="submit" data-test="sign-up-submit">Sign Up</button>
+  <button type="submit" data-testid="sign-up-submit">Sign Up</button>
 </form>
 
 <style lang="postcss">

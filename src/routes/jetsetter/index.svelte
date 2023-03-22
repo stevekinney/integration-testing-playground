@@ -20,14 +20,14 @@
     <input
       class="block w-3/4"
       id="new-item-input"
-      data-test="new-item-input"
+      data-testid="new-item-input"
       type="text"
       placeholder="New Item"
       required
       bind:value={newItemName}
     />
   </div>
-  <button class="block w-1/4" disabled={!newItemName} id="add-item" data-test="add-item">
+  <button class="block w-1/4" disabled={!newItemName} id="add-item" data-testid="add-item">
     Add Item
   </button>
 </form>
@@ -36,21 +36,21 @@
   <label for="filter-items">Filter</label>
   <input
     id="filter-items"
-    data-test="filter-items"
+    data-testid="filter-items"
     class="block w-full small"
     placeholder="Filter Items"
     bind:value={$filter}
   />
 </div>
 
-<section class="flex gap-2 my-8" data-test="items">
+<section class="flex gap-2 my-8" data-testid="items">
   <ItemList title="Unpacked" items={$unpacked} />
   <ItemList title="Packed" items={$packed} />
 </section>
 
 <footer class="flex gap-2 w-full">
-  <button data-test="mark-all-as-unpacked" class="block" on:click={markAllAsUnpacked}
+  <button data-testid="mark-all-as-unpacked" class="block" on:click={markAllAsUnpacked}
     >Mark All as Unpacked</button
   >
-  <button data-test="remove-all" class="block" on:click={removeAll}>Remove All</button>
+  <button data-testid="remove-all" class="block" on:click={removeAll}>Remove All</button>
 </footer>

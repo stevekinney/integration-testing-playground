@@ -47,6 +47,9 @@
     clearTimeout(timer);
     timer = setTimeout(() => {
       hasSearched = true;
+      if (searchTerm === '') {
+        if (browser) goto(`${$page.path}`, { replaceState: true, keepfocus: true });
+      }
       if (searchTerm) {
         results = searchFor(searchTerm);
         const search = new URLSearchParams({ name: searchTerm });
@@ -67,30 +70,27 @@
     <h1 class="text-xl">Pokémon Search</h1>
     <input
       id="search"
-      data-test="search"
+      data-testid="search"
       class="w-full"
       type="search"
       placeholder="Search Pokémon…"
       value={searchTerm}
       on:keyup={updateSearchTerm}
     />
-    <label for="search" data-test="search-label"><strong>Searching for…</strong> {searchTerm}</label
+    <label for="search" data-testid="search-label"
+      ><strong>Searching for…</strong> {searchTerm}</label
     >
     {#await results}
-      <p data-test="loading-state">Loading…</p>
+      <p data-testid="loading-state">Loading…</p>
     {:then { pokemon }}
-      <div class="my-4" data-test="results">
+      <div class="my-4" data-testid="results">
         {#each pokemon as p}
-          <article data-test="result">
-            <a
-              href="/pokemon-search/{p.id}?name={searchTerm}"
-              sveltekit:prefetch
-              data-test-id={p.id}>{p.name}</a
-            >
+          <article data-testid="result">
+            <a href="/pokemon-search/{p.id}?name={searchTerm}" data-test-id={p.id}>{p.name}</a>
           </article>
         {:else}
           {#if hasSearched}
-            <div class="empty-state" data-test="empty-state">No Pokémon match that query.</div>
+            <div class="empty-state" data-testid="empty-state">No Pokémon match that query.</div>
           {/if}
         {/each}
       </div>
