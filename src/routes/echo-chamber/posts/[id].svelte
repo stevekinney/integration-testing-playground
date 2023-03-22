@@ -60,24 +60,24 @@
   };
 </script>
 
-<article class="post-detail" id="post-detail-{post.id}" data-test="post-detail">
+<article class="post-detail" id="post-detail-{post.id}" data-testid="post-detail">
   <header class="flex content-between mb-6">
     <div class="w-full">
-      <a href="/echo-chamber/posts" data-test="post-detail-back-arrow" sveltekit:noscroll
+      <a href="/echo-chamber/posts" data-testid="post-detail-back-arrow" sveltekit:noscroll
         >&larr; Close</a
       >
     </div>
     <div class="w-full flex gap-2 justify-end">
-      <div data-test="post-detail-controls">
+      <div data-testid="post-detail-controls">
         {#if !isEditing}
           <a
             class="button small"
             href="{$page.path}?editing"
             sveltekit:noscroll
-            data-test="post-detail-controls-edit-button">Edit</a
+            data-testid="post-detail-controls-edit-button">Edit</a
           >
         {:else}
-          <a class="button small" href={$page.path} data-test="post-detail-controls-cancel-button"
+          <a class="button small" href={$page.path} data-testid="post-detail-controls-cancel-button"
             >Cancel</a
           >
         {/if}
@@ -86,18 +86,18 @@
         action="/echo-chamber/posts/{post.id}?_method=DELETE"
         method="post"
         on:submit|preventDefault={deletePost}
-        data-test="post-detail-controls-delete-button"
+        data-testid="post-detail-controls-delete-button"
       >
         <button class="small danger">Delete</button>
       </form>
     </div>
   </header>
-  <p data-test="post-detail-metadata">
+  <p data-testid="post-detail-metadata">
     At the exact moment of {post.createdAt}, {post.author.email}'s deepest thought was…
   </p>
   <p class="text-center text-4xl my-4 font-serif italic">
     <span class="quote">“</span>
-    <span data-test="post-detail-content">{post.content}</span>
+    <span data-testid="post-detail-content">{post.content}</span>
     <span class="quote">”</span>
   </p>
   {#if isEditing}
@@ -105,7 +105,7 @@
       class="post-edit"
       method="post"
       action="/echo-chamber/api/{post.id}?_method=PATCH"
-      data-test="post-detail-edit-form"
+      data-testid="post-detail-edit-form"
       on:submit|preventDefault={updatePost}
     >
       <input
@@ -113,9 +113,9 @@
         name="text"
         use:focusOnMount
         bind:value={draft}
-        data-test="post-detail-draft-content"
+        data-testid="post-detail-draft-content"
       />
-      <button type="submit" data-test="post-detail-edit-submit">Update</button>
+      <button type="submit" data-testid="post-detail-edit-submit">Update</button>
     </form>
   {/if}
 </article>

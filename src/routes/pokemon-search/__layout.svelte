@@ -86,7 +86,7 @@
       <div class="my-4" data-testid="results">
         {#each pokemon as p}
           <article data-testid="result">
-            <a href="/pokemon-search/{p.id}?name={searchTerm}" data-test-id={p.id}>{p.name}</a>
+            <a href="/pokemon-search/{p.id}?name={searchTerm}" data-testid={p.id}>{p.name}</a>
           </article>
         {:else}
           {#if hasSearched}

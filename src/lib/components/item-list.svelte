@@ -5,7 +5,7 @@
   export let items: Item[];
 </script>
 
-<section class="w-full" data-test="items-{title.toLowerCase()}">
+<section class="w-full" data-testid="items-{title.toLowerCase()}">
   <h1>{title}</h1>
   <ul>
     {#each items as item (item.id)}
@@ -19,10 +19,10 @@
           />
           {item.title}
         </label>
-        <button data-test="remove" class="small" on:click={() => remove(item.id)}>Remove</button>
+        <button data-testid="remove" class="small" on:click={() => remove(item.id)}>Remove</button>
       </li>
     {:else}
-      <p data-test="items-empty-state" class="font-light text-purple-600">No items to show.</p>
+      <p data-testid="items-empty-state" class="font-light text-purple-600">No items to show.</p>
     {/each}
   </ul>
 </section>

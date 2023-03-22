@@ -10,16 +10,16 @@
   <article
     id="post-preview-{post.id}"
     class="post-preview"
-    data-test="post-preview-{post.id}"
+    data-testid="post-preview-{post.id}"
     class:active
   >
-    <p class="post-content" data-test="post-preview-{post.id}-content">{post.content}</p>
+    <p class="post-content" data-testid="post-preview-{post.id}-content">{post.content}</p>
     <footer>
-      <p class="post-metadata" data-test="post-preview-{post.id}-metadata">
-        — <span class="post-preview-author" data-test="post-preview-{post.id}-author"
+      <p class="post-metadata" data-testid="post-preview-{post.id}-metadata">
+        — <span class="post-preview-author" data-testid="post-preview-{post.id}-author"
           >{post?.author?.email}</span
         >,
-        <span class="post-preview-datetime" data-test="post-preview-{post.id}-datetime"
+        <span class="post-preview-datetime" data-testid="post-preview-{post.id}-datetime"
           >{post.createdAt}</span
         >
       </p>
