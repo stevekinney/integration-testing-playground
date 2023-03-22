@@ -25,22 +25,22 @@
   <p class="text-red-900 border-red-900 bg-red-300 border-2 p-2 my-4">{error}</p>
 {/if}
 
-<form action="/echo-chamber/api/sign-in" method="post" data-test="sign-in-form">
+<form action="/echo-chamber/api/sign-in" method="post" data-testid="sign-in-form">
   <label for="email">Email Address</label><input
     type="email"
     name="email"
     id="email"
-    data-test="sign-in-email"
+    data-testid="sign-in-email"
     required
   />
   <label for="password">Password</label><input
     type="password"
     name="password"
     id="password"
-    data-test="sign-in-password"
+    data-testid="sign-in-password"
     required
   />
-  <button type="submit" data-test="sign-in-submit">Sign In</button>
+  <button type="submit" data-testid="sign-in-submit">Sign In</button>
 </form>
 
 <style lang="postcss">

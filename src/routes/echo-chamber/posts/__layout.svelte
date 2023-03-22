@@ -41,7 +41,7 @@
   <div class="content col-span-1 lg:col-span-2 row-span-2">
     <slot />
   </div>
-  <section id="posts" class="flex flex-col gap-2" data-test="post-preview-list">
+  <section id="posts" class="flex flex-col gap-2" data-testid="post-preview-list">
     {#each posts as post (post.id)}
       <PostPreview {post} />
     {/each}

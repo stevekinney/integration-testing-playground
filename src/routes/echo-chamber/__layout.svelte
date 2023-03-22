@@ -38,28 +38,28 @@
 </svelte:head>
 
 <header class="mb-4 lg:mb-8">
-  <h1 data-test="application-title"><a href="/echo-chamber">Echo Chamber</a></h1>
-  <p data-test="application-blurb">
+  <h1 data-testid="application-title"><a href="/echo-chamber">Echo Chamber</a></h1>
+  <p data-testid="application-blurb">
     A safe place to talk to yourself. Because the thoughts aren't going to lead themselves.
   </p>
 </header>
 
 <nav class="mb-8 pb-4 border-b-4 border-purple-900">
   {#if user}
-    <span data-test="current-user" class="flex justify-between">
-      <p>Signed in as <strong data-test="current-user-email">{user.email}</strong></p>
-      <button on:click={signOut} class="danger" data-test="sign-out">Sign Out</button>
+    <span data-testid="current-user" class="flex justify-between">
+      <p>Signed in as <strong data-testid="current-user-email">{user.email}</strong></p>
+      <button on:click={signOut} class="danger" data-testid="sign-out">Sign Out</button>
     </span>
   {:else}
     <div class="flex gap-2">
       <a
         href="/echo-chamber/sign-in"
-        data-test="sign-in"
+        data-testid="sign-in"
         class:active={$page.path.endsWith('sign-in')}>Sign In</a
       >
       <a
         href="/echo-chamber/sign-up"
-        data-test="sign-up"
+        data-testid="sign-up"
         class:active={$page.path.endsWith('sign-up')}>Sign Up</a
       >
     </div>

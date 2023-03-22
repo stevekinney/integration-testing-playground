@@ -67,7 +67,7 @@
 
 <header class="my-4">
   <h1>
-    Secret Menu Items (<a href={asCSV} download="secret-menu-items" data-test="download-link"
+    Secret Menu Items (<a href={asCSV} download="secret-menu-items" data-testid="download-link"
       >Download</a
     >)
   </h1>

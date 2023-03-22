@@ -35,26 +35,30 @@
       id="number-of-facts"
       class="block my-2 p-2 w-80 border-2 border-purple-700"
       bind:value={numberOfFacts}
-      data-test="amount-select"
+      data-testid="amount-select"
     >
       {#each [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as number}
         <option value={number}>{number} {number === 1 ? 'Fact' : 'Facts'}</option>
       {/each}
     </select>
-    <button data-test="fetch-button">Fetch</button>
-    <button class="secondary" data-test="clear-button" on:click|preventDefault={() => (facts = [])}
-      >Clear</button
+    <button data-testid="fetch-button">Fetch</button>
+    <button
+      class="secondary"
+      data-testid="clear-button"
+      on:click|preventDefault={() => (facts = [])}>Clear</button
     >
   </form>
 
   <section id="facts">
     {#each facts as fact}
-      <article class="my-4 p-4 border-4 border-purple-600" data-test="dog-fact">
+      <article class="my-4 p-4 border-4 border-purple-600" data-testid="dog-fact">
         <h2>Dog Fact #{fact.id}</h2>
         <p>{fact.fact}</p>
       </article>
     {:else}
-      <p class="text-center p-4 my-4" data-test="empty-state">Fetch some dog facts or something.</p>
+      <p class="text-center p-4 my-4" data-testid="empty-state">
+        Fetch some dog facts or something.
+      </p>
     {/each}
   </section>
 </div>

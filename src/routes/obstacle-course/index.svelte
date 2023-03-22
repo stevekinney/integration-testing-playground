@@ -31,21 +31,21 @@
 <div class="grid grid-cols-2 gap-4">
   <div class="p-2 border-2 border-purple-300">
     <label for="deep-thought">Deep Thought</label>
-    <input placeholder="Some text…" id="deep-thought" bind:value={text} data-test="text-input" />
+    <input placeholder="Some text…" id="deep-thought" bind:value={text} data-testid="text-input" />
   </div>
   <div class="p-2 border-2 border-purple-300 flex items-center justify-around">
-    <p data-test="text-result">{text}</p>
+    <p data-testid="text-result">{text}</p>
   </div>
   <div class="p-2 border-2 border-purple-300">
     <label for="avenger">Favorite Avenger</label>
-    <select bind:value={favoriteAvenger} id="avenger" data-test="select-input">
+    <select bind:value={favoriteAvenger} id="avenger" data-testid="select-input">
       {#each avengers as avenger}
         <option>{avenger}</option>
       {/each}
     </select>
   </div>
   <div class="p-2 border-2 border-purple-300 flex items-center justify-around">
-    <p data-test="select-result">{favoriteAvenger || 'No one'}</p>
+    <p data-testid="select-result">{favoriteAvenger || 'No one'}</p>
   </div>
   <div class="p-2 border-2 border-purple-300">
     <h3>Toppings</h3>
@@ -57,14 +57,14 @@
           bind:group={toppings}
           name="toppings"
           value={topping}
-          data-test="checkbox-{topping.toLocaleLowerCase()}"
+          data-testid="checkbox-{topping.toLocaleLowerCase()}"
         />
         {topping}
       </label>
     {/each}
   </div>
   <div class="p-2 border-2 border-purple-300 flex items-center justify-around">
-    <p data-test="checkbox-result">{toppings.join(', ') || '(None)'}</p>
+    <p data-testid="checkbox-result">{toppings.join(', ') || '(None)'}</p>
   </div>
   <div class="p-2 border-2 border-purple-300">
     <h3>Favorite Beatle</h3>
@@ -76,29 +76,29 @@
           id={beatle.toLowerCase()}
           value={beatle}
           bind:group={favoriteBeatle}
-          data-test="radio-{beatle.toLowerCase()}"
+          data-testid="radio-{beatle.toLowerCase()}"
         />
         {beatle}
       </label>
     {/each}
   </div>
   <div class="p-2 border-2 border-purple-300 flex items-center justify-around">
-    <p data-test="radio-result">{favoriteBeatle}</p>
+    <p data-testid="radio-result">{favoriteBeatle}</p>
   </div>
   <div class="p-2 border-2 border-purple-300">
     <label for="color">Favorite Color</label><input
       type="color"
       id="color"
       bind:value={color}
-      data-test="color-input"
+      data-testid="color-input"
     />
   </div>
   <div
     class="p-2 border-2 border-purple-300 flex items-center justify-around"
     style="color: {color}"
-    data-test="color-container"
+    data-testid="color-container"
   >
-    <p data-test="color-result">{color}</p>
+    <p data-testid="color-result">{color}</p>
   </div>
   <div class="p-2 border-2 border-purple-300">
     <label for="date">Date</label><input
@@ -106,11 +106,11 @@
       name="date"
       id="date"
       bind:value={date}
-      data-test="date-input"
+      data-testid="date-input"
     />
   </div>
   <div class="p-2 border-2 border-purple-300 flex items-center justify-around">
-    <p data-test="date-result">{date}</p>
+    <p data-testid="date-result">{date}</p>
   </div>
   <div class="p-2 border-2 border-purple-300">
     <label for="rating">Rating</label><input
@@ -120,11 +120,11 @@
       min="0"
       max="10"
       bind:value={rating}
-      data-test="range-input"
+      data-testid="range-input"
     />
   </div>
   <div class="p-2 border-2 border-purple-300 flex items-center justify-around">
-    <p data-test="range-result">{rating}</p>
+    <p data-testid="range-result">{rating}</p>
   </div>
   <div class="p-2 border-2 border-purple-300">
     <label for="resume">Résumé</label><input
@@ -132,11 +132,11 @@
       name="resume"
       id="resume"
       bind:value={file}
-      data-test="file-input"
+      data-testid="file-input"
     />
   </div>
   <div class="p-2 border-2 border-purple-300 flex items-center justify-around">
-    <p data-test="file-result">{file || ''}</p>
+    <p data-testid="file-result">{file || ''}</p>
   </div>
 </div>
 
